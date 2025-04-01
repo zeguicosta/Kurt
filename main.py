@@ -470,21 +470,16 @@ all_sprites.add(crosshair)
 # Criar plataformas
 platform_list = [
     (0, SCREEN_HEIGHT - 40, SCREEN_WIDTH, 40),  # Chão
-    (100, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 1
-    (400, SCREEN_HEIGHT - 300, 200, 20),  # Plataforma 2
-    (200, SCREEN_HEIGHT - 400, 200, 20),  # Plataforma 3
-    (600, SCREEN_HEIGHT - 250, 200, 20),  # Plataforma 4
-    (800, SCREEN_HEIGHT - 350, 200, 20),  # Plataforma 5
-    (1000, SCREEN_HEIGHT - 450, 200, 20),  # Plataforma 6
-    (1200, SCREEN_HEIGHT - 300, 200, 20),  # Plataforma 7
-    (1400, SCREEN_HEIGHT - 400, 200, 20),  # Plataforma 8
-    (1600, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 9
-    (1800, SCREEN_HEIGHT - 350, 200, 20),  # Plataforma 10
-    (2000, SCREEN_HEIGHT - 500, 200, 20),  # Plataforma 11
-    (2200, SCREEN_HEIGHT - 250, 200, 20),  # Plataforma 12
-    (2400, SCREEN_HEIGHT - 400, 200, 20),  # Plataforma 13
-    (2600, SCREEN_HEIGHT - 300, 200, 20),  # Plataforma 14
-    (2800, SCREEN_HEIGHT - 450, 200, 20),  # Plataforma 15
+    (50, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 1
+    (300, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 2
+    (550, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 3
+    (800, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 4
+    (1050, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 5
+    (1300, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 6
+    (1550, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 7
+    (1800, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 8
+    (2050, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 9
+    (2300, SCREEN_HEIGHT - 200, 200, 20),  # Plataforma 10
 ]
 
 for i, p in enumerate(platform_list):
@@ -494,11 +489,10 @@ for i, p in enumerate(platform_list):
     
     # Adicionar inimigos em algumas plataformas (exceto no chão)
     if i > 0:
-        # Adicionar 2 inimigos por plataforma (exceto no chão)
-        for j in range(2):
-            enemy = Enemy(p[0] + (j+1) * (p[2] // 3), p[1], platform, p[0], p[0] + p[2] - 30)
-            all_sprites.add(enemy)
-            enemies.add(enemy)
+        # Adicionar 1 inimigo por plataforma (exceto no chão)
+        enemy = Enemy(p[0] + p[2] // 2, p[1], platform, p[0], p[0] + p[2] - 30)
+        all_sprites.add(enemy)
+        enemies.add(enemy)
     
     # Adicionar moedas em cada plataforma
     for j in range(3):  # 3 moedas por plataforma
@@ -546,11 +540,10 @@ while running:
                     
                     # Adicionar inimigos em algumas plataformas (exceto no chão)
                     if i > 0:
-                        # Adicionar 2 inimigos por plataforma (exceto no chão)
-                        for j in range(2):
-                            enemy = Enemy(p[0] + (j+1) * (p[2] // 3), p[1], platform, p[0], p[0] + p[2] - 30)
-                            all_sprites.add(enemy)
-                            enemies.add(enemy)
+                        # Adicionar 1 inimigo por plataforma (exceto no chão)
+                        enemy = Enemy(p[0] + p[2] // 2, p[1], platform, p[0], p[0] + p[2] - 30)
+                        all_sprites.add(enemy)
+                        enemies.add(enemy)
                     
                     # Adicionar moedas em cada plataforma
                     for j in range(3):  # 3 moedas por plataforma
